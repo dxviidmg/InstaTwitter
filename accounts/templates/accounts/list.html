@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<h1>Lista de usuarios</h1>
+
+{%for user in users%}
+<a href="{{user.get_absolute_url}}">
+<p>{{user.get_full_name}}</p>
+{%if user.profile.img%}
+<img src="{{user.profile.img.url}}" width="100px">
+{%else%}
+vacio
+{%endif%}
+</a>
+{%empty%}
+{%endfor%}
+
+{%endblock content%}

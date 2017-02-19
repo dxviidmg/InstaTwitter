@@ -1,0 +1,9 @@
+    <div class="login-form container">
+      <form action="{%url 'login'%}" method="post">
+        <h4>Inicia sesión</h4>
+          {%csrf_token%}
+          {{form.as_p}}
+        <input type="hidden" name="next" value="{{next}}">
+        <input type="submit" value="Inicia sesión" class="btn btn-primary">
+      </form>
+</div>

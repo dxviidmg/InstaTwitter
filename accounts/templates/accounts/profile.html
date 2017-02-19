@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<p>{{request.user.first_name}} {{request.user.last_name}}</p>
+<img width="100" src="{{user.profile.img.url}}">
+
+{%with fo=request.user.followers.count%}
+<p class="count">Me siguen: <span class="fo">{{fo}}</span></p>
+{%endwith%}
+
+{%with fi=user.following.count%}
+<p>Sigo a: {{fi}}</p>
+{%endwith%}
+{%endblock content%}
+
